@@ -1,3 +1,4 @@
+const fs = require('fs');
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
@@ -71,7 +72,6 @@ function processCommand(receivedMessage) {
     }
 }
 function catCommand(arguments, receivedMessage) {
-    var fs = require('fs');
     var files = fs.readdirSync('img\\cat')
     /* now files is an Array of the name of the files in the folder and you can pick a random name inside of that array */
     let chosenFile = files[Math.floor(Math.random() * files.length)]
