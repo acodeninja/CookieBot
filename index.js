@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
@@ -72,10 +73,10 @@ function processCommand(receivedMessage) {
     }
 }
 function catCommand(arguments, receivedMessage) {
-    var files = fs.readdirSync('img\\cat')
+    var files = fs.readdirSync(path.join('img', 'cat'))
     /* now files is an Array of the name of the files in the folder and you can pick a random name inside of that array */
     let chosenFile = files[Math.floor(Math.random() * files.length)]
-    const localFileAttachment = new Discord.Attachment('img\\cat\\' + chosenFile)
+    const localFileAttachment = new Discord.Attachment(path.join('img', 'cat', chosenFile))
     receivedMessage.channel.send(localFileAttachment)
     receivedMessage.channel.send("Miaou! :D")
 }
@@ -137,7 +138,7 @@ function hymneCommand(arguments, receivedMessage) {
                  receivedMessage.channel.send('Tout le monde, levez vous...');
                  receivedMessage.channel.send('...voici l\'hymne de la mère patrie!')
                  receivedMessage.channel.send('Souka bliat!')
-                 const dispatcher = connection.playFile('C:/Users/JOSEPH/Desktop/RandomBot/sons/hymneSouka.mp3');
+                 const dispatcher = connection.playFile(path.join('sons', 'hymneSouka.mp3');
                  isPlaying = true;
 
                  client.on('message', (receivedMessage) => {
@@ -210,7 +211,7 @@ function bitchCommand(arguments, receivedMessage) {
         receivedMessage.member.voiceChannel.join()
              .then(connection => { // Connection is an instance of VoiceConnection
                  receivedMessage.channel.send('... lasagna!')
-                 const dispatcher = connection.playFile('C:/Users/JOSEPH/Desktop/RandomBot/sons/lasagna.mp3');
+                 const dispatcher = connection.playFile(path.join('sons', 'lasagna.mp3');
                  isPlaying = true;
 
                  client.on('message', (receivedMessage) => {
@@ -284,7 +285,7 @@ function bruhCommand(arguments, receivedMessage) {
         receivedMessage.member.voiceChannel.join()
              .then(connection => { // Connection is an instance of VoiceConnection
                  receivedMessage.channel.send('...')
-                 const dispatcher = connection.playFile('C:/Users/JOSEPH/Desktop/RandomBot/sons/bruh.mp3');
+                 const dispatcher = connection.playFile(path.join('sons', 'bruh.mp3');
                  isPlaying = true;
 
                  dispatcher.on('end', () => {
