@@ -1,0 +1,9 @@
+{
+  "name": "CookieBot",
+  "version": "1.0.0",
+  "description": "a discord bot",
+  "main": "index.js",
+  "repository": "https://github.com/JosephAnime/CookieBot.git",
+  "author": "Joseph <joseph300905@gmail.com>",
+  "license": "MIT"
+}
