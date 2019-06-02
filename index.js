@@ -138,7 +138,7 @@ function hymneCommand(arguments, receivedMessage) {
                  receivedMessage.channel.send('Tout le monde, levez vous...');
                  receivedMessage.channel.send('...voici l\'hymne de la mère patrie!')
                  receivedMessage.channel.send('Souka bliat!')
-                 const dispatcher = connection.playFile(path.join('sons', 'hymneSouka.mp3');
+                 const dispatcher = connection.playFile(path.join('sons', 'hymneSouka.mp3'));
                  isPlaying = true;
 
                  client.on('message', (receivedMessage) => {
@@ -211,7 +211,7 @@ function bitchCommand(arguments, receivedMessage) {
         receivedMessage.member.voiceChannel.join()
              .then(connection => { // Connection is an instance of VoiceConnection
                  receivedMessage.channel.send('... lasagna!')
-                 const dispatcher = connection.playFile(path.join('sons', 'lasagna.mp3');
+                 const dispatcher = connection.playFile(path.join('sons', 'lasagna.mp3'));
                  isPlaying = true;
 
                  client.on('message', (receivedMessage) => {
@@ -285,7 +285,7 @@ function bruhCommand(arguments, receivedMessage) {
         receivedMessage.member.voiceChannel.join()
              .then(connection => { // Connection is an instance of VoiceConnection
                  receivedMessage.channel.send('...')
-                 const dispatcher = connection.playFile(path.join('sons', 'bruh.mp3');
+                 const dispatcher = connection.playFile(path.join('sons', 'bruh.mp3'));
                  isPlaying = true;
 
                  dispatcher.on('end', () => {
